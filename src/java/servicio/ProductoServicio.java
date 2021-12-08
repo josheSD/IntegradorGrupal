@@ -14,7 +14,7 @@ import negocio.Producto;
  */
 public interface ProductoServicio {
     public String grabar(Producto prod);
-    public String actualizar(Producto prod,int idProducto);
+    public String actualizar(Producto prod);
     public String eliminar(int idProducto);
     public List lista();
     public Producto buscar(int idProducto);

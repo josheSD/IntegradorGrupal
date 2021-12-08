@@ -178,10 +178,10 @@
                         <div class="row mx-1">
                             <div class="col-12 mt-3">
                                 <h4>
-                                   Lista de Usuario 
+                                   Lista de Producto 
                                 </h4>
-                                <form method="post" action="UsuarioControl">
-                                    <button class="btn btn-primary my-3" type="submit" name="acc" value="AgregarUsuario">
+                                <form method="post" action="ProductoControl">
+                                    <button class="btn btn-primary my-3" type="submit" name="acc" value="AgregarProducto">
                                         Agregar
                                     </button>
                                 </form>
@@ -199,37 +199,47 @@
                                         <thead>
                                           <tr>
                                             <th scope="col">Acciones</th>
-                                            <th scope="col">Usuario</th>
-                                            <th scope="col">Tipo Usuario</th>
+                                            <th scope="col">Producto</th>
+                                            <th scope="col">Precio Unitario</th>
+                                            <th scope="col">Cantidad Inicial</th>
+                                            <th scope="col">Cantidad Final</th>   
                                             <th scope="col">Fecha Registro</th>
                                             <th scope="col">Fecha Actualizacion</th>
                                           </tr>
                                         </thead>
                                         <tbody>
-                                                <% for(int i=1;i<usuPre.getListaUsuario().size();i++){ %>
-                                                <% Object[] usuarioLista = (Object[])usuPre.getListaUsuario().get(i); %>
+                                                <% for(int i=1;i<proPre.getListaProducto().size();i++){ %>
+                                                <% Object[] productoLista = (Object[])proPre.getListaProducto().get(i); %>
                                                   <tr>
                                                     <td>
-                                                        <form method="post" action="UsuarioControl">
+                                                        <form method="post" action="ProductoControl">
                                                             
-                                                            <input type="hidden" name="IdUsuario" value="<%= usuarioLista[0] %>" />
-                                                            <input type="hidden" name="Usuario" value="<%= usuarioLista[1] %>" />
-                                                            <input type="hidden" name="Contrasenia" value="<%= usuarioLista[2] %>" />
-                                                            <input type="hidden" name="FechaRegistro" value="<%= usuarioLista[3] %>" />
-                                                            <input type="hidden" name="FechaActualizacion" value="<%= usuarioLista[4] %>" />
-                                                            <input type="hidden" name="IdTipoUsuario" value="<%= usuarioLista[5] %>" />
-                                                            <input type="hidden" name="TipoUsuario" value="<%= usuarioLista[6] %>" />
+                                                            <input type="hidden" name="IdProducto" value="<%= productoLista[0] %>" />
+                                                            <input type="hidden" name="Producto" value="<%= productoLista[1] %>" />
+                                                            <input type="hidden" name="PrecioUnitario" value="<%= productoLista[2] %>" />
+                                                            <input type="hidden" name="CantidadInicial" value="<%= productoLista[3] %>" />
+                                                            <input type="hidden" name="CantidadFinal" value="<%= productoLista[4] %>" />
+                                                            <input type="hidden" name="FechaRegistro" value="<%= productoLista[5] %>" />
+                                                            <input type="hidden" name="FechaActualizacion" value="<%= productoLista[6] %>" />
                                                             
-                                                            <button class="btn btn-success" type="submit" name="acc" value="ModificarUsuario">
+                                                            <button class="btn btn-success" type="submit" name="acc" value="ModificarProducto">
                                                                 <i class="fas fa-pencil-alt fa-xs"></i>
                                                             </button>
-                                                            <button class="btn btn-danger" type="submit" name="acc" value="EliminarUsuario">
+                                                            <button class="btn btn-danger" type="submit" name="acc" value="EliminarProducto">
                                                                 <i class="fas fa-trash fa-xs"></i>
                                                             </button>
                                                         </form>
                                                     </td>
-                                                    <td><%= usuarioLista[1] %></td>
-                                                    <td><%= usuarioLista[6] %></td>
+                                                    <td><%= productoLista[1] %></td>
+                                                    <td><%= productoLista[2] %></td>
+                                                    <td><%= productoLista[3] %></td>
+                                                    <td><%= productoLista[4] %></td>
+                                                    <td><%= productoLista[5] %></td>
+                                                    <td>
+                                                        <% if(productoLista[6] != null){ %> 
+                                                            <%= productoLista[6] %>
+                                                        <% }%>
+                                                    </td>
                                                   </tr>
                                                 <% } %>
                                         </tbody>

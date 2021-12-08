@@ -18,12 +18,29 @@ public class Producto {
     private Double precioUnitario;
     private int cantidadInicial;
     private int cantidadFinal;
-    private Date fechaRegistro;
-    private Date fechaActualizacion;
+    private String fechaRegistro;
+    private String fechaActualizacion;
     
     public Producto(){}
+    
+    public Producto(String nombre, Double precioUnitario, int cantidadInicial, int cantidadFinal, String fechaRegistro) {
+        this.nombre = nombre;
+        this.precioUnitario = precioUnitario;
+        this.cantidadInicial = cantidadInicial;
+        this.cantidadFinal = cantidadFinal;
+        this.fechaRegistro = fechaRegistro;
+    }
+    
+    public Producto(int idProducto, String nombre, Double precioUnitario, int cantidadInicial, int cantidadFinal, String fechaActualizacion) {
+        this.idProducto = idProducto;
+        this.nombre = nombre;
+        this.precioUnitario = precioUnitario;
+        this.cantidadInicial = cantidadInicial;
+        this.cantidadFinal = cantidadFinal;
+        this.fechaActualizacion = fechaActualizacion;
+    }
 
-    public Producto(int idProducto, String nombre, Double precioUnitario, int cantidadInicial, int cantidadFinal, Date fechaRegistro, Date fechaActualizacion) {
+    public Producto(int idProducto, String nombre, Double precioUnitario, int cantidadInicial, int cantidadFinal, String fechaRegistro, String fechaActualizacion) {
         this.idProducto = idProducto;
         this.nombre = nombre;
         this.precioUnitario = precioUnitario;
@@ -73,19 +90,19 @@ public class Producto {
         this.cantidadFinal = cantidadFinal;
     }
 
-    public Date getFechaRegistro() {
+    public String getFechaRegistro() {
         return fechaRegistro;
     }
 
-    public void setFechaRegistro(Date fechaRegistro) {
+    public void setFechaRegistro(String fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
 
-    public Date getFechaActualizacion() {
+    public String getFechaActualizacion() {
         return fechaActualizacion;
     }
 
-    public void setFechaActualizacion(Date fechaActualizacion) {
+    public void setFechaActualizacion(String fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
     }
     

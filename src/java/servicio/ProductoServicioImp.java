@@ -32,8 +32,8 @@ public class ProductoServicioImp implements ProductoServicio{
     }
 
     @Override
-    public String actualizar(Producto prod, int idProducto) {
-        String msg = prodDao.actualizar(prod,idProducto);
+    public String actualizar(Producto prod) {
+        String msg = prodDao.actualizar(prod);
         if(msg == null){
             msg = "Producto actualizado con éxito";
         }

@@ -16,17 +16,17 @@ public class Detalle {
     private int cantidad;
     private Date fechaRegistro;
     private Date fechaActualizacion;
-    private int idProductoVenta;
+    private int idVenta;
     private int idProducto;
 
     public Detalle(){}
 
-    public Detalle(Double importe, int cantidad, Date fechaRegistro, Date fechaActualizacion, int idProductoVenta, int idProducto) {
+    public Detalle(Double importe, int cantidad, Date fechaRegistro, Date fechaActualizacion, int idVenta, int idProducto) {
         this.importe = importe;
         this.cantidad = cantidad;
         this.fechaRegistro = fechaRegistro;
         this.fechaActualizacion = fechaActualizacion;
-        this.idProductoVenta = idProductoVenta;
+        this.idVenta = idVenta;
         this.idProducto = idProducto;
     }
 
@@ -62,12 +62,12 @@ public class Detalle {
         this.fechaActualizacion = fechaActualizacion;
     }
 
-    public int getIdProductoVenta() {
-        return idProductoVenta;
+    public int getIdVenta() {
+        return idVenta;
     }
 
-    public void setIdProductoVenta(int idProductoVenta) {
-        this.idProductoVenta = idProductoVenta;
+    public void setIdVenta(int idVenta) {
+        this.idVenta = idVenta;
     }
 
     public int getIdProducto() {

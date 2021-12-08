@@ -16,13 +16,13 @@ public class ProductoDaoImp implements ProductoDao{
     
     @Override
     public String grabar(Producto prod) {
-        String sql = "INSERT INTO producto(Nombre,PrecioUnitario,CantidadInicial) VALUES('"+ prod.getNombre()+"',"+prod.getPrecioUnitario()+","+prod.getCantidadInicial()+")";
+        String sql = "INSERT INTO producto(Nombre,PrecioUnitario,CantidadInicial,CantidadFinal,FechaRegistro) VALUES('"+ prod.getNombre()+"',"+prod.getPrecioUnitario()+","+prod.getCantidadInicial()+","+prod.getCantidadFinal()+",'"+prod.getFechaRegistro()+"')";
         return Operacion.ejecutar(sql);
     }
 
     @Override
-    public String actualizar(Producto prod, int idProducto) {
-        String sql = "UPDATE producto SET Nombre = '"+prod.getNombre()+"', PrecioUnitario = "+prod.getPrecioUnitario()+", CantidadInicial = "+prod.getCantidadInicial()+" WHERE IdProducto = "+idProducto+"";
+    public String actualizar(Producto prod) {
+        String sql = "UPDATE producto SET Nombre = '"+prod.getNombre()+"', PrecioUnitario = "+prod.getPrecioUnitario()+", CantidadInicial = "+prod.getCantidadInicial()+", FechaActualizacion = '"+prod.getFechaActualizacion()+"' WHERE IdProducto = "+prod.getIdProducto()+"";
         return Operacion.ejecutar(sql);
     }
 

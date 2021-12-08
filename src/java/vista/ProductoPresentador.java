@@ -16,7 +16,7 @@ public class ProductoPresentador {
     
     private String msg = "";
     private String tipoAccion = "";
-    private Object[] producto = {"","","",""};
+    private Object[] producto = {"","","","","",""};
     private List listaProducto = new ArrayList();
     
     public ProductoPresentador(){
