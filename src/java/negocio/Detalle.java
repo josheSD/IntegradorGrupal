@@ -14,14 +14,14 @@ import java.util.Date;
 public class Detalle {
     private Double importe;
     private int cantidad;
-    private Date fechaRegistro;
-    private Date fechaActualizacion;
+    private String fechaRegistro;
+    private String fechaActualizacion;
     private int idVenta;
     private int idProducto;
 
     public Detalle(){}
 
-    public Detalle(Double importe, int cantidad, Date fechaRegistro, Date fechaActualizacion, int idVenta, int idProducto) {
+    public Detalle(Double importe, int cantidad, String fechaRegistro, String fechaActualizacion, int idVenta, int idProducto) {
         this.importe = importe;
         this.cantidad = cantidad;
         this.fechaRegistro = fechaRegistro;
@@ -46,19 +46,19 @@ public class Detalle {
         this.cantidad = cantidad;
     }
 
-    public Date getFechaRegistro() {
+    public String getFechaRegistro() {
         return fechaRegistro;
     }
 
-    public void setFechaRegistro(Date fechaRegistro) {
+    public void setFechaRegistro(String fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
 
-    public Date getFechaActualizacion() {
+    public String getFechaActualizacion() {
         return fechaActualizacion;
     }
 
-    public void setFechaActualizacion(Date fechaActualizacion) {
+    public void setFechaActualizacion(String fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
     }
 

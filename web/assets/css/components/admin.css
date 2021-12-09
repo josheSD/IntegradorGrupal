@@ -27,3 +27,11 @@
 .modules__button .module-parrafo:hover{
     text-decoration: underline;
 }
+
+.theme-dark .venta .bg-yellow{
+    background-color: red !important;
+}
+
+.theme-dark .venta .bg-blue{
+    background-color: yellow !important;
+}

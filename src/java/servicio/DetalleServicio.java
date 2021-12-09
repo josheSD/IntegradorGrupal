@@ -6,15 +6,14 @@
 package servicio;
 
 import java.util.List;
-import negocio.Venta;
+import negocio.Detalle;
 
 /**
  *
  * @author josec
  */
-public interface VentaServicio {
-    public Object[] grabar(Venta venta);
-    public String actualizar(Venta venta,int idVenta);
+public interface DetalleServicio {
+    public String grabar(Detalle detalle);
     public String eliminar(int idVenta);
-    public List lista();
+    public List buscar(int idVenta);
 }

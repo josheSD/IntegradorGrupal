@@ -7,17 +7,33 @@
 
 document.addEventListener("DOMContentLoaded", function(event) {
     
-    setTimeout(function(){
+    setTimeout(function(){ 
         
-        const inputIdUsuario = document.getElementById('IdUsuarioForm');
-        const idtipousuarioform = inputIdUsuario.dataset.idtipousuarioform;
+        // OnInit modificarProducto
+        const productoFormActualizar = document.getElementById('productoFormActualizar');
+        const idproductoform = productoFormActualizar.dataset.idproductoform;
 
-        if(idtipousuarioform){
-            console.log('AQUI idtipousuarioform',idtipousuarioform);
-            document.getElementById('selectTipoUsuario').value = idtipousuarioform;
+        if(idproductoform){
+            document.getElementById('selectProducto').value = idproductoform;
         }
-        
-    },100);
+
+        // Escuchando selectProducto
+        const selectProducto = document.getElementById('selectProducto');
+              selectProducto.addEventListener('change', (event) => {
+                  const seleccionado = parseInt(event.target.value);
+
+                  const parent = event.srcElement;
+                  Array.prototype.forEach.call(parent.children, child => {
+                    const idproducto = parseInt(child.dataset.idproducto);
+                    if(seleccionado == idproducto){
+                        const producto       = child.dataset.product;
+                        const preciounitario = child.dataset.preciounitario;
+                        document.getElementById('precio').value = preciounitario;
+                    }
+                  });
+              });
+         
+    }, 100);
     
 });
 

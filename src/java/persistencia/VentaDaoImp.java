@@ -15,23 +15,29 @@ import negocio.Venta;
 public class VentaDaoImp implements VentaDao{
 
     @Override
-    public Object[] grabar(Venta venta) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public Object[] grabar(Venta venta){
+        String sql = "INSERT INTO venta(Serie,Estado,Senior,Dni,Direccion,Telefono,Total,FechaRegistro,IdUsuario) VALUES('"+ venta.getSerie()+"',"+venta.getEstado()+",'"+venta.getSenior()+"','"+venta.getDni()+"','"+venta.getDireccion()+"','"+venta.getTelefono()+"',"+venta.getTotal()+",'"+venta.getFechaRegistro()+"',"+venta.getIdUsuario()+")";
+               Operacion.ejecutar(sql);
+        String sqlId = "SELECT * FROM venta ORDER BY IdVenta DESC LIMIT 0,1;";
+        return Operacion.buscar(sqlId);
     }
 
     @Override
     public String actualizar(Venta venta, int idVenta) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "UPDATE venta SET Senior = '"+venta.getSenior()+"', Dni = '"+venta.getDni()+"', Direccion = '"+venta.getDireccion()+"', Telefono = '"+venta.getTelefono()+"', Total = "+venta.getTotal()+", FechaActualizacion = '"+venta.getFechaActualizacion()+"', IdUsuario = "+venta.getIdUsuario()+" WHERE IdVenta = "+ idVenta +"";
+        return Operacion.ejecutar(sql);
     }
 
     @Override
     public String eliminar(int idVenta) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        String sql = "DELETE FROM venta WHERE IdVenta = "+idVenta+"";
+        return Operacion.ejecutar(sql);
     }
 
     @Override
-    public List lista(int idTipoUsuario) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    public List lista() {
+        String sql = "SELECT * FROM venta ORDER BY IdVenta DESC";
+        return Operacion.listar(sql);
     }
 
 }

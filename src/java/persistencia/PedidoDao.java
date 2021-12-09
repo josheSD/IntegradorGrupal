@@ -6,15 +6,15 @@
 package persistencia;
 
 import java.util.List;
-import negocio.Venta;
+import negocio.Producto;
 
 /**
  *
  * @author josec
  */
-public interface VentaDao {
-    public Object[] grabar(Venta venta);
-    public String actualizar(Venta venta,int idVenta);
-    public String eliminar(int idVenta);
-    public List lista();
+public interface PedidoDao {
+    public List vaciarCesta();
+    public List agregarProducto(Producto prod,int cant);
+    public List quitarProducto(int IdProducto);
+    public List actualizarProducto(Producto prod,int cant,int indice);
 }

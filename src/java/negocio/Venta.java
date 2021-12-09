@@ -20,13 +20,13 @@ public class Venta {
     private String direccion;
     private String telefono;
     private Double total;
-    private Date fechaRegistro;
-    private Date fechaActualizacion;
+    private String fechaRegistro;
+    private String fechaActualizacion;
     private int idUsuario;
 
     public Venta(){}
 
-    public Venta(String serie, int estado, String senior, String dni, String direccion, String telefono, Double total, Date fechaRegistro, Date fechaActualizacion, int idUsuario) {
+    public Venta(String serie, int estado, String senior, String dni, String direccion, String telefono, Double total, String fechaRegistro, String fechaActualizacion, int idUsuario) {
         this.serie = serie;
         this.estado = estado;
         this.senior = senior;
@@ -95,19 +95,19 @@ public class Venta {
         this.total = total;
     }
 
-    public Date getFechaRegistro() {
+    public String getFechaRegistro() {
         return fechaRegistro;
     }
 
-    public void setFechaRegistro(Date fechaRegistro) {
+    public void setFechaRegistro(String fechaRegistro) {
         this.fechaRegistro = fechaRegistro;
     }
 
-    public Date getFechaActualizacion() {
+    public String getFechaActualizacion() {
         return fechaActualizacion;
     }
 
-    public void setFechaActualizacion(Date fechaActualizacion) {
+    public void setFechaActualizacion(String fechaActualizacion) {
         this.fechaActualizacion = fechaActualizacion;
     }
 
