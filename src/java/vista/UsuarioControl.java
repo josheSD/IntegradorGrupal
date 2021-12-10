@@ -19,6 +19,8 @@ import javax.servlet.http.HttpServletResponse;
 import negocio.Usuario;
 import servicio.DashboardServicio;
 import servicio.DashboardServicioImp;
+import servicio.ProductoServicio;
+import servicio.ProductoServicioImp;
 import servicio.TipoUsuarioServicio;
 import servicio.TipoUsuarioServicioImp;
 import servicio.UsuarioServicio;
@@ -31,6 +33,9 @@ import servicio.UsuarioServicioImp;
 @WebServlet(name = "UsuarioControl", urlPatterns = {"/UsuarioControl"})
 public class UsuarioControl extends HttpServlet {
 
+    private ProductoServicio proSer;
+    private ProductoPresentador proPre;
+    
     private UsuarioServicio usuSer;
     private UsuarioPresentador usuPre;
     private TipoUsuarioServicio tipUsuSer;
@@ -46,6 +51,9 @@ public class UsuarioControl extends HttpServlet {
         
         this.dashSer = new DashboardServicioImp();
         this.dashPre = new DashboardPresentador();
+        
+        this.proSer = new ProductoServicioImp();
+        this.proPre = new ProductoPresentador();
     }
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -229,16 +237,32 @@ public class UsuarioControl extends HttpServlet {
             usuPre.setUsuario(usuario);
             usuPre.setMenu(usuSer.menu(Integer.parseInt(usuario[5].toString())));
             
-            dashPre.setListaVentaMayor(dashSer.ventaMayor());
-            dashPre.setListaVentaMenor(dashSer.ventaMenor());
-            dashPre.setListaVentaAnual(dashSer.ventaAnual());
-            dashPre.setListaVentaMensualActual(dashSer.ventaMensualActual());
-            dashPre.setListaVentaPorAnio(dashSer.ventaPorAnio());
-            dashPre.setListaVentaUltimoTrimestre(dashSer.ventaUltimoTrimestre());
+            
+            if(usuario[6].toString().equals("Vendedor")){
+                
+                Object[] productoObject = {"","","","","","",""};
+                proPre.setProducto(productoObject);
 
-            request.getSession().setAttribute("dashPre", dashPre);
-            request.getSession().setAttribute("usuPre", usuPre);
-            response.sendRedirect("IUAdmin.jsp");
+                proPre.setMsg("");
+                proPre.setListaProducto(proSer.lista());
+                request.getSession().setAttribute("proPre", proPre);
+                request.getSession().setAttribute("usuPre", usuPre);
+                response.sendRedirect("IUProducto.jsp");
+        
+            }else{
+                
+                dashPre.setListaVentaMayor(dashSer.ventaMayor());
+                dashPre.setListaVentaMenor(dashSer.ventaMenor());
+                dashPre.setListaVentaAnual(dashSer.ventaAnual());
+                dashPre.setListaVentaMensualActual(dashSer.ventaMensualActual());
+                dashPre.setListaVentaPorAnio(dashSer.ventaPorAnio());
+                dashPre.setListaVentaUltimoTrimestre(dashSer.ventaUltimoTrimestre());
+
+                request.getSession().setAttribute("dashPre", dashPre);
+                request.getSession().setAttribute("usuPre", usuPre);
+                response.sendRedirect("IUAdmin.jsp");
+                
+            }
         }else{
             usuPre.setMsg("Usuario no encontrado");
             request.getSession().setAttribute("usuPre", usuPre);
