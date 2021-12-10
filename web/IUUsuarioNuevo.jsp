@@ -224,12 +224,18 @@
                             </div>
 
                             <div class="row">
-                                <div class="col-md-8 d-flex justify-content-end mt-3">
-                                    <button type="submit" class="btn btn-primary mr-2" name="acc" value="GrabarUsuario">
-                                       <i class="fas fa-save d-inline-block mr-2"></i>
-                                       <% String tipoAccion2 = usuPre.getTipoAccion(); %>
-                                       <%= tipoAccion2 %> Usuario
-                                    </button>
+                                <div class="col-12 ml-1">
+                                    
+                                    <div class="d-inline-block ml-3">
+                                        <button type="submit" class="btn btn-primary mr-1 mt-4 mb-4" name="acc" value="GrabarUsuario">
+                                           <i class="fas fa-save d-inline-block mr-2"></i>
+                                           <% String tipoAccion2 = usuPre.getTipoAccion(); %>
+                                           <%= tipoAccion2 %> Usuario
+                                        </button>   
+                                        <button type="submit" class="btn btn-danger ml-2" name="acc" value="Lista">
+                                            Cancel
+                                        </button>
+                                    </div>
                                 </div>
                             </div>
                         </div>

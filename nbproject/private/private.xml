@@ -12,8 +12,7 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/University/Integrador/IntegradorGrupal/src/java/vista/DashboardControl.java</file>
-            <file>file:/D:/University/Integrador/IntegradorGrupal/src/java/vista/DashboardPresentador.java</file>
+            <file>file:/D:/University/Integrador/IntegradorGrupal/src/java/persistencia/DashboardDaoImp.java</file>
         </group>
     </open-files>
 </project-private>

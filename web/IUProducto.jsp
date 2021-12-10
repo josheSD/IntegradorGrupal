@@ -94,7 +94,7 @@
                     <aside class="l-navbar-profile__info-user">
                         <% Object[]usuario = usuPre.getUsuario(); %>
                         <h2 class="mb-0"> <%= usuario[1] %> </h2>
-                        <p class="mb-0" > <%= usuario[6] %> </p>
+                        <p class="mb-0" > <%= usuario[4] %> </p>
                         <p class="mb-0" > Ver Cuenta </p>
                     </aside>
 

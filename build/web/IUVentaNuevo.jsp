@@ -391,7 +391,7 @@
                                                <% String tipoAccion2 = ventPre.getTipoAccion(); %>
                                                <%= tipoAccion2 %> Venta
                                             </button>   
-                                            <button class="btn btn-danger ml-2">
+                                            <button type="submit" class="btn btn-danger ml-2" name="acc" value="Lista">
                                                 Cancel
                                             </button>
                                         </div>
