@@ -12,6 +12,8 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import servicio.DashboardServicio;
+import servicio.DashboardServicioImp;
 
 /**
  *
@@ -20,6 +22,14 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "DashboardControl", urlPatterns = {"/DashboardControl"})
 public class DashboardControl extends HttpServlet {
 
+    private DashboardServicio dashSer;
+    private DashboardPresentador dashPre;
+    
+    public DashboardControl(){
+        this.dashSer = new DashboardServicioImp();
+        this.dashPre = new DashboardPresentador();
+    }
+    
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
@@ -34,6 +44,14 @@ public class DashboardControl extends HttpServlet {
     private void lista(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         
+        dashPre.setListaVentaMayor(dashSer.ventaMayor());
+        dashPre.setListaVentaMenor(dashSer.ventaMenor());
+        dashPre.setListaVentaAnual(dashSer.ventaAnual());
+        dashPre.setListaVentaMensualActual(dashSer.ventaMensualActual());
+        dashPre.setListaVentaPorAnio(dashSer.ventaPorAnio());
+        dashPre.setListaVentaUltimoTrimestre(dashSer.ventaUltimoTrimestre());
+
+        request.getSession().setAttribute("dashPre", dashPre);
         response.sendRedirect("IUAdmin.jsp");
         
     }

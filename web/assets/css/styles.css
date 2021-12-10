@@ -850,7 +850,7 @@ a {
 .l-dashboard__title {
   display: flex;
   align-items: center;
-  height: 87px;
+  height: 60px;
 }
 .theme-light .l-dashboard__title {
   border-bottom: 1px solid #EBEBEB;
@@ -861,7 +861,7 @@ a {
   background-color: #201F1E;
 }
 .l-dashboard__title img {
-  width: 48px;
+  width: 38px;
   border-radius: 5px;
 }
 .l-dashboard__title h1 {

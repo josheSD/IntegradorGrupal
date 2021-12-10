@@ -17,6 +17,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import negocio.Usuario;
+import servicio.DashboardServicio;
+import servicio.DashboardServicioImp;
 import servicio.TipoUsuarioServicio;
 import servicio.TipoUsuarioServicioImp;
 import servicio.UsuarioServicio;
@@ -33,10 +35,17 @@ public class UsuarioControl extends HttpServlet {
     private UsuarioPresentador usuPre;
     private TipoUsuarioServicio tipUsuSer;
 
+    private DashboardServicio dashSer;
+    private DashboardPresentador dashPre;
+    
     public UsuarioControl(){
         this.usuSer = new UsuarioServicioImp();
         this.usuPre = new UsuarioPresentador();
+        
         this.tipUsuSer = new TipoUsuarioServicioImp();
+        
+        this.dashSer = new DashboardServicioImp();
+        this.dashPre = new DashboardPresentador();
     }
     
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -219,6 +228,15 @@ public class UsuarioControl extends HttpServlet {
             usuPre.setMsg("");
             usuPre.setUsuario(usuario);
             usuPre.setMenu(usuSer.menu(Integer.parseInt(usuario[5].toString())));
+            
+            dashPre.setListaVentaMayor(dashSer.ventaMayor());
+            dashPre.setListaVentaMenor(dashSer.ventaMenor());
+            dashPre.setListaVentaAnual(dashSer.ventaAnual());
+            dashPre.setListaVentaMensualActual(dashSer.ventaMensualActual());
+            dashPre.setListaVentaPorAnio(dashSer.ventaPorAnio());
+            dashPre.setListaVentaUltimoTrimestre(dashSer.ventaUltimoTrimestre());
+
+            request.getSession().setAttribute("dashPre", dashPre);
             request.getSession().setAttribute("usuPre", usuPre);
             response.sendRedirect("IUAdmin.jsp");
         }else{

@@ -172,7 +172,7 @@
             
             <!-- START MAIN -->
             <section class="l-main" id="main">
-                <main class="l-dashboard">
+                <main class="l-dashboard boleta overflow-auto">
 
                     <div class="container-fluid">
                         <div class="row mx-1">

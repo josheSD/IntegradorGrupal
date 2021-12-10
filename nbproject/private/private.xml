@@ -12,10 +12,11 @@
     </editor-bookmarks>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/D:/University/Integrador/IntegradorGrupal/web/IUVenta.jsp</file>
+            <file>file:/D:/University/Integrador/IntegradorGrupal/web/assets/css/components/login.css</file>
             <file>file:/D:/University/Integrador/IntegradorGrupal/web/assets/css/components/admin.css</file>
+            <file>file:/D:/University/Integrador/IntegradorGrupal/web/IUAdmin.jsp</file>
             <file>file:/D:/University/Integrador/IntegradorGrupal/web/IUVentaNuevo.jsp</file>
-            <file>file:/D:/University/Integrador/IntegradorGrupal/src/java/negocio/Detalle.java</file>
+            <file>file:/D:/University/Integrador/IntegradorGrupal/web/IULogin.jsp</file>
         </group>
     </open-files>
 </project-private>
