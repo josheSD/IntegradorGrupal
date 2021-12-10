@@ -358,7 +358,7 @@
                     labels: ['<%= ventaTrimestreNombre.get(0) %>','<%= ventaTrimestreNombre.get(1) %>','<%= ventaTrimestreNombre.get(2) %>'],
                     datasets: [{
                       label: 'Venta Trimestral',
-                      data: <%= ventaTrimestreValor %>,
+                      data: [<%= ventaTrimestreValor.get(0) %>,<%= ventaTrimestreValor.get(1) %>,<%= ventaTrimestreValor.get(2) %>],
                       backgroundColor: [
                         'rgb(190,217,253)',
                         'rgb(255,212,106)',
